@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 class UsersRequest extends ApiRequest
 {
     /**
-     * Fetch all users from the api.
+     * Fetch all users from the API.
      *
      * @return Collection
      */

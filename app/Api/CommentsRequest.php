@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 class CommentsRequest extends ApiRequest
 {
     /**
-     * Fetch all comments from the api.
+     * Fetch all comments from the API.
      *
      * @return Collection
      */

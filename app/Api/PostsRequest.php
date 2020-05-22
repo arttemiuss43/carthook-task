@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 class PostsRequest extends ApiRequest
 {
     /**
-     * Fetch all posts from the api.
+     * Fetch all posts from the API.
      *
      * @return Collection
      */

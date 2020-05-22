@@ -46,6 +46,8 @@ class SyncApi extends Command
         foreach ($this->syncs as $sync) {
             app()->call([new $sync($limits), 'handle']);
         }
+
+        $this->info('API synchronization completed successfully!');
     }
 
 }
