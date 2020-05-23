@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,4 +21,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('users', [UsersController::class, 'index']);
+Route::prefix('users')->group(function () {
+    Route::get('/', [UsersController::class, 'index']);
+
+    Route::prefix('{user}')->group(function () {
+        Route::get('/', [UsersController::class, 'show']);
+
+        Route::prefix('posts')->group(function () {
+            Route::get('/', [PostsController::class, 'index']);
+            Route::get('{post}/comments', [CommentsController::class, 'index']);
+        });
+    });
+});

@@ -56,6 +56,7 @@ class ApiTest extends TestCase
         $this->assertCount(1, User::all());
         $this->assertEquals('John Doe', User::first()->name);
 
+        // The same users should be updated rather than be created twice
         $this->artisan('api:sync');
 
         $this->assertCount(1, User::all());
@@ -71,6 +72,7 @@ class ApiTest extends TestCase
         $this->assertCount(1, $user->posts);
         $this->assertEquals('Some title', $user->posts()->first()->title);
 
+        // The same posts should be updated rather than be created twice
         $this->artisan('api:sync');
 
         $this->assertCount(1, Post::all());
@@ -86,6 +88,7 @@ class ApiTest extends TestCase
         $this->assertCount(1, $post->comments);
         $this->assertEquals('Some comment', $post->comments()->first()->body);
 
+        // The same comments should be updated rather than be created twice
         $this->artisan('api:sync');
 
         $this->assertCount(1, Comment::all());

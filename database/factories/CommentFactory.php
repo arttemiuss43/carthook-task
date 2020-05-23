@@ -2,7 +2,8 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\User;
+use App\Comment;
+use App\Post;
 use Faker\Generator as Faker;
 
 /*
@@ -16,13 +17,12 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Comment::class, function (Faker $faker) {
     return [
+        'post_id' => Post::inRandomOrder()->first()->id,
         'remote_id' => rand(1, 10000),
         'name' => $faker->name,
-        'username' => $faker->userName,
         'email' => $faker->unique()->safeEmail,
-        'phone' => $faker->phoneNumber,
-        'website' => $faker->domainName
+        'body' => $faker->paragraph,
     ];
 });

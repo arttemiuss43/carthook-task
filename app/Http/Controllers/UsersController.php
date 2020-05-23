@@ -14,4 +14,9 @@ class UsersController extends Controller
             'users' => User::latest()->get()
         ];
     }
+
+    public function show(User $user)
+    {
+        return compact('user');
+    }
 }
