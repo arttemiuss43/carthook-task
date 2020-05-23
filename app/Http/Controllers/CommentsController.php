@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\User;
 
-class CommentsController extends Controller
+class CommentsController extends ApiController
 {
     public function index(User $user, Post $post)
     {
-        return [
+        return $this->ok([
             'comments' => $post->comments
-        ];
+        ]);
     }
 }

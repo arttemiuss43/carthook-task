@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Api\UsersRequest;
 use App\User;
-use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class UsersController extends ApiController
 {
     public function index()
     {
-        return [
+        return $this->ok([
             'users' => User::latest()->get()
-        ];
+        ]);
     }
 
     public function show(User $user)
     {
-        return compact('user');
+        return $this->ok(compact('user'));
     }
 }
