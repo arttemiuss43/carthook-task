@@ -49,10 +49,7 @@ class SyncApi extends Command
             }
         });
 
-        $this->info(sprintf(
-            'API synchronization completed successfully in %s seconds!',
-            $time
-        ));
+        $this->info("API synchronization completed successfully in $time seconds!");
     }
 
     /**

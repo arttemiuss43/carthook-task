@@ -12,7 +12,7 @@ which can be overridden by values in `.env` file. The only option, for now, is e
 All API data is stored in the local database which can be updated with `api:sync` artisan command.
 Various synchronization tasks like fetching users, posts and comments are split into steps 
 and separated into different classes from that command. It's also possible to specify how many first resources to fetch. 
-This command is executed every hour if scheduler is set up properly. The command executes for roughly 1.1 seconds 
+This command is executed every hour if scheduler is set up properly. The command executes in less than 2 seconds 
 on my machine so I guess one hour is pretty fair. It should be tweaked based on the data update frequency requirement. 
 This approach can be contested but there are some advantages:
 
