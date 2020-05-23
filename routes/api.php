@@ -29,7 +29,7 @@ Route::prefix('users')->group(function () {
 
         Route::prefix('posts')->group(function () {
             Route::get('/', [PostsController::class, 'index']);
-            Route::get('{post}/comments', [CommentsController::class, 'index']);
+            Route::get('{post:id}/comments', [CommentsController::class, 'index']);
         });
     });
 });

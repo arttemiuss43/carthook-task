@@ -8,7 +8,7 @@ use App\Api\CommentsRequest;
 use App\Comment;
 use App\Post;
 
-class CommentsSync extends Sync
+class SyncComments extends Sync
 {
     public function handle(CommentsRequest $commentsRequest)
     {

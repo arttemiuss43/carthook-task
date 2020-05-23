@@ -31,7 +31,7 @@ return [
     ],
 
     'jsonplaceholder' => [
-        'endpoint' => 'http://jsonplaceholder.typicode.com'
+        'endpoint' => env('JSONPLACEHOLDER_ENDPOINT', 'http://jsonplaceholder.typicode.com')
     ]
 
 ];

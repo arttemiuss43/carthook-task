@@ -7,7 +7,7 @@ namespace App\Console\Commands\Syncs;
 use App\Api\UsersRequest;
 use App\User;
 
-class UsersSync extends Sync
+class SyncUsers extends Sync
 {
     public function handle(UsersRequest $usersRequest)
     {

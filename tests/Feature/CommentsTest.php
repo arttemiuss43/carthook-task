@@ -52,7 +52,7 @@ class CommentsTest extends TestCase
     {
         $notExistingUserId = $this->user->id + 1;
 
-        $this->get("api/users/$notExistingUserId/posts/{$this->post->id}")
+        $this->get("api/users/$notExistingUserId/posts/{$this->post->id}/comments")
             ->assertStatus(404);
     }
 
@@ -61,7 +61,16 @@ class CommentsTest extends TestCase
     {
         $john = factory(User::class)->create();
 
-        $this->get("api/users/{$john->id}/posts/{$this->post->id}")
+        $this->get("api/users/{$john->id}/posts/{$this->post->id}/comments")
+            ->assertStatus(404);
+    }
+
+    /** @test */
+    public function it_returns_404_if_a_post_is_not_found()
+    {
+        $notExistingPostId = $this->post->id + 1;
+
+        $this->get("api/users/{$this->user->id}/posts/$notExistingPostId/comments")
             ->assertStatus(404);
     }
 }

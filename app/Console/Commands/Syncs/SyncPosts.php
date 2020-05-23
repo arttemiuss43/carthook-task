@@ -8,7 +8,7 @@ use App\Api\PostsRequest;
 use App\Post;
 use App\User;
 
-class PostsSync extends Sync
+class SyncPosts extends Sync
 {
     public function handle(PostsRequest $postsRequest)
     {
