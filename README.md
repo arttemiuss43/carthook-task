@@ -9,7 +9,7 @@ which can be overridden by values in `.env` file. The only option, for now, is e
 
 ### Caching API calls
 
-All API data are stored in the local database which can be updated with `api:sync` artisan command.
+All API data is stored in the local database which can be updated with `api:sync` artisan command.
 Various synchronization tasks like fetching users, posts and comments are split into steps 
 and separated into different classes from that command. It's also possible to specify how many first resources to fetch. 
 This command is executed every hour if scheduler is set up properly. The command executes for roughly 1.1 seconds 
@@ -25,7 +25,7 @@ The entire application is tested. I was following the Test-Driven Development ap
 are faked using Laravel `HTTP` facade capabilities to not waste time and resources during every test. But the real
 API calls are also tested to be sure that the real API is working and the structure of response has not been changed.
 If it's needed to execute the full test suite and not hit the real API we can specify to exclude api group like so:
-`--exclude-group api`. The local API endpoints are also tested. In memory sqlite database was using during tests 
+`--exclude-group api`. The local API endpoints are also tested. In memory sqlite database was used during tests 
 for the sake of simplicity.
 
 ### Database design
