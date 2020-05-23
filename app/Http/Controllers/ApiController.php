@@ -10,6 +10,6 @@ abstract class ApiController extends Controller
 {
     protected function ok($body)
     {
-        return response($body, Response::HTTP_OK);
+        return response()->json($body, Response::HTTP_OK);
     }
 }
